@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe-pizza</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b15d9bb3ba.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-----------header------------->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.webp" alt="" class="logo">
+                <ul class="menu" id="menu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#menu2">Menu</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#Latte-art">Latte art</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+                <img src="images/menu.png" alt="" class="btn-menu" id="sideNav">
+            </nav>
+            <div class="haeder-text">
+                <p>Cafe pizza <br> Edem, from 1991  </p>
+            </div>
+        </div>
+    </div>
+    <!-----------menu------------->
+    <div id="menu2">
+        <div class="container">
+            <div class="row">
+                <div class="colum1">
+                    <img src="images/restuarant2.png" alt="">
+                </div>
+                <div class="colum2">
+                    <h1 class="title-menu">MENU</h1>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('pizza')">Pizza</p>
+                        <p class="tab-links" onclick="opentab('spaggeti')">Spaggeti</p>
+                        <p class="tab-links" onclick="opentab('burger')">burger</p>
+                        <p class="tab-links" onclick="opentab('salad')">salad</p>
+                    </div>
+                    <div class="tab-contents active-tab"  id="pizza">
+                        <ul>
+                            <li>Special</li>
+                            <li>Margarita</li>
+                            <li>Greek</li>
+                            <li>hanibal</li>
+                            <li>Ham-cheece</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="spaggeti">
+                        <ul>
+                            <li>Neapolitan</li>
+                            <li>Carbonara</li>
+                            <li>Chicken</li>
+                            <li>Pesto</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="burger">
+                        <ul>
+                            <li>Classic</li>
+                            <li>Edem</li>
+                            <li>Greek</li>
+                            <li>Bbq</li>
+                            <li>Cheese-burger</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="salad">
+                        <ul>
+                            <li>Ceasar </li>
+                            <li>Tuna salad</li>
+                            <li>Greek</li>
+                            <li>Tomatoes with soft cheese</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------Services------------->
+    <div id="services">
+        <div class="container">
+            <h1 class="title-services">My Services</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/party.png" alt="" class="party">
+                    <div class="layer">
+                        <h3>Party for kids</h3>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/wedding.jpg" alt="" class="wedding">
+                    <div class="layer">
+                        <h3>wedding parties,<br> baptism</h3>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/sushi.jpg" alt="" class="sushi">
+                    <div class="layer">
+                        <h3>Sushi nights<br> every wednesday</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------Latte art-------------->
+    <div id="Latte-art">
+        <div class="container">
+            <h1>Latte art</h1>
+            <div class="art-list">
+                <div>
+                    <img src="images/icon-1.jpg" alt="" class="icon-1">
+                </div>
+                <div>
+                    <img src="images/icon-2.jpg" alt="" class="icon-2">
+                </div>
+                <div>
+                    <img src="images/icon-3.jpg" alt="" class="icon-3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------contact------------->
+    <div id="contact">
+        <div class="contain">
+            <div class="row">
+                <div class="contact-left">
+                    <h1>Contact Us</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>contact@example.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>0123456789</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form action="">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">Sumbit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link")
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+
+    </script>
+
+    <script>
+
+        var menuBtn = document.getElementById("sideNav");
+        var menu = document.getElementById("menu");
+
+        menu.style.right = "-200px"
+        menuBtn.onclick = function(){
+            if(menu.style.right == "-200px"){
+                menu.style.right = "0px";
+            }
+            else{
+                menu.style.right ="-200px";
+            }
+        }
+
+    </script>
+</body>
+</html>
